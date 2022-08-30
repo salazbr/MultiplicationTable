@@ -2,7 +2,9 @@ package com.tw;
 
 public class MultiplicationTable {
     public String create(int start, int end) {
-        return null;
+        return isValid(start, end) && isInRange(start) && isInRange(end)
+                ? generateSingleExpression(start, end)
+                : null;
     }
 
     public Boolean isValid(int start, int end) {
@@ -17,7 +19,7 @@ public class MultiplicationTable {
 
     public Boolean isStartNotBiggerThanEnd(int start, int end) {
 
-        return start < end;
+        return start <= end;
     }
 
     public String generateTable(int start, int end) {
