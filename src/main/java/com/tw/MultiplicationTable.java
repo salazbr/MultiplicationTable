@@ -10,7 +10,8 @@ public class MultiplicationTable {
     }
 
     public Boolean isInRange(int number) {
-        return null;
+
+        return number >= 1 && number <= 1000;
     }
 
     public Boolean isStartNotBiggerThanEnd(int start, int end) {
