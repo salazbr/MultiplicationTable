@@ -21,11 +21,23 @@ public class MultiplicationTable {
     }
 
     public String generateTable(int start, int end) {
-        return null;
+        StringBuilder output = new StringBuilder();
+        for(int i = start; i <= end; i++) {
+            for(int j = start; j <= i; j++) {
+                output.append(generateSingleExpression(j, i));
+                if(j < i) output.append("  ");
+            }
+            output.append(System.lineSeparator());
+        }
+        return output.toString().trim().replaceAll("\\n\\n", "");
     }
 
     public String generateLine(int start, int row) {
-        return null;
+        StringBuilder output = new StringBuilder();
+        for(int i = start; i <= row; i++) {
+            output.append(generateSingleExpression(i, row)).append("  ");
+        }
+        return output.toString().trim();
     }
 
     public String generateSingleExpression(int multiplicand, int multiplier) {
